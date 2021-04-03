@@ -1,5 +1,10 @@
-# What to do here
-This repository has been created exclusively for tracking BotSentry issues and suggestions
+# BotSentry Issue tracker
+Our issue tracker can be found at: https://github.com/BlackDemonZyT/BotSentry/issues
+You can also click on the button above.
 
-# Issues & Suggestions
-To report your issue / bug or suggest something for BotSentry you can go here: https://github.com/BlackDemonZyT/BotSentry/issues
+Add your suggestions and error report to there, and we will try to answer your issue as soon as possible.
+We are striving to make BotSentry a community contributed product.
+
+# New Issue Tracker
+Why are we using this new Issue Tracker, you ask?
+Because we needed to have a more clearer overview of all our issues and suggestions.
