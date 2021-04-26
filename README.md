@@ -1,4 +1,4 @@
-# BotSentry Issue tracker
+# BotSentry Issue Tracker
 Our issue tracker can be found at: https://github.com/BlackDemonZyT/BotSentry/issues.
 You can also click on the button above.
 
