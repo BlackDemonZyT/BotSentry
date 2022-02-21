@@ -1,0 +1,295 @@
+#-------------------------------------------------------------------------------------------------------#
+#    _______    ______  ________         ______   ________  __    __  ________  _______  __      __     #
+#   |       \  /      \|        \       /      \ |        \|  \  |  \|        \|       \|  \    /  \    #
+#   | $$$$$$$\|  $$$$$$\\$$$$$$$$      |  $$$$$$\| $$$$$$$$| $$\ | $$ \$$$$$$$$| $$$$$$$\\$$\  /  $$    #
+#   | $$__/ $$| $$  | $$  | $$         | $$___\$$| $$__    | $$$\| $$   | $$   | $$__| $$ \$$\/  $$     #
+#   | $$    $$| $$  | $$  | $$          \$$    \ | $$  \   | $$$$\ $$   | $$   | $$    $$  \$$  $$      #
+#   | $$$$$$$\| $$  | $$  | $$          _\$$$$$$\| $$$$$   | $$\$$ $$   | $$   | $$$$$$$\   \$$$$       #
+#   | $$__/ $$| $$__/ $$  | $$         |  \__| $$| $$_____ | $$ \$$$$   | $$   | $$  | $$   | $$        #
+#   | $$    $$ \$$    $$  | $$          \$$    $$| $$     \| $$  \$$$   | $$   | $$  | $$   | $$        #
+#    \$$$$$$$   \$$$$$$    \$$           \$$$$$$  \$$$$$$$$ \$$   \$$    \$$    \$$   \$$    \$$        #
+#                                                                                                       #
+#              _________          _______  _        _______ _________ _______  _______                  #
+#              \__   __/|\     /|(  ___  )( (    /|(  ___  )\__   __/(  ___  )(  ____ \                 #
+#                 ) (   | )   ( || (   ) ||  \  ( || (   ) |   ) (   | (   ) || (    \/                 #
+#                 | |   | (___) || (___) ||   \ | || (___) |   | |   | |   | || (_____                  #
+#                 | |   |  ___  ||  ___  || (\ \) ||  ___  |   | |   | |   | |(_____  )                 #
+#                 | |   | (   ) || (   ) || | \   || (   ) |   | |   | |   | |      ) |                 #
+#                 | |   | )   ( || )   ( || )  \  || )   ( |   | |   | (___) |/\____) |                 #
+#                 )_(   |/     \||/     \||/    )_)|/     \|   )_(   (_______)\_______)                 #
+#                                                                                                       #
+#                                                                                                       #
+#                  Join our Discord Server if you need Support or have any doubt!                       #
+#                                  https://discord.gg/uxRTwDa                                           #
+#                                                                                                       #
+#                      You can get some translations made by our community in:                          #
+#                        https://cyberdevelopment.es/BotSentry/translations                             #
+#                                                                                                       #
+#  Add our official Discord Bot to your DC server, the bot will send a message in your Discord Server   #
+#      and in your DMs when an attack occurs to your server, with statistics related to the attack      #
+#       https://discord.com/oauth2/authorize?client_id=750526188555993148&scope=bot&permissions=8       #
+#                                                                                                       #
+#-------------------------------------------------------------------------------------------------------#
+#    __  __ ______  _____ _____         _____ ______  _____
+#   |  \/  |  ____|/ ____/ ____|  /\   / ____|  ____|/ ____|
+#   | \  / | |__  | (___| (___   /  \ | |  __| |__  | (___
+#   | |\/| |  __|  \___ \\___ \ / /\ \| | |_ |  __|  \___ \
+#   | |  | | |____ ____) |___) / ____ \ |__| | |____ ____) |
+#   |_|  |_|______|_____/_____/_/    \_\_____|______|_____/
+#
+# The url that will get automatically substituted in kick messages
+whitelisturl: "www.notbot.es"
+error:
+  startup: "&cError al conectar con los servidores de &6&lBotSentry&c, codigo &4%1$d&c. &cPuedes ignorar este error en caso de que aparezca 2-3 veces, si es repetitivo, contactanos en discord (/bs discord)."
+  config: "&cNo se ha podido descargar la configuracion por defecto de los servidores de &6&lBotSentry&c. Generando una configuracion sin comentarios..."
+  mysql:
+    sqlerror: "&cHa ocurrido un error de SQL: MySQL Codigo Error %1$d"
+    credentials: "&cLas credenciales de la configuracion son incorrectas"
+    classnotfound: "&cLas clases de MySQL no se han encontrado, comprueba la version de tu servidor"
+  firewall:
+    command: "&cHa habido un error al ejecutar un comando de sistema."
+    notunix: "&cNo estas usando un sistema UNIX. Comprueba los comandos de blacklist. Si tienes alguna duda, contactanos en discord (/bs discord)."
+    setup: "&cHa ocurrido un error al auto-configurar el blacklist interno. Comprueba que enciendas el servidor con root o con un usuario que tenga permisos para los comandos especificados. Si tienes alguna duda, contactanos en discord (/bs discord)."
+    unix:
+      install: "&cNo se han podido instalar los paquetes. Comprueba que enciendas el servidor con root o con un usuario que tenga permisos para los comandos especificados. Si tienes alguna duda contactanos en discord (/bs discord)."
+  filewriting: "&cError al escribir en el sistema de ficheros: %1$s"
+blacklisted: "&8\u00AB &cBotSentry &8\u00BB\n&7Tu conexion ha sido analizada!\n&7-----------------------------------\n\n&cTu IP se encuentra en la lista negra.\n\n&7-----------------------------------\n&7Quieres jugar ahora mismo? Completa el Captcha de Google:\n&e%1$s"
+commands:
+  bs:
+    whitelist:
+      add:
+        successful:
+          moved: "&a%1$s &7ha sido movida de la lista negra a la lista blanca de IPs no forzadas"
+          added: "&a%1$s &7a sido agregada a la lista blanca de IPs no forzadas"
+        error:
+          invalid: "&cLa IP especificada no es correcta"
+          already: "&cLa IP especificada ya se encuentra en la lista blanca"
+      description: "Lista Blanca"
+      clear:
+        successful: "&aLa lista blanca de IPs no forzadas ha sido limpiada correctamente"
+        error: "&cEl codigo es incorrecto: /bs whitelist clear %1$d"
+        confirm: "&cConfirma la limpieza con: /bs whitelist clear %1$d"
+        warning: "&4Cuidado! &cEsto borrara todas las IPs de la lista blanca de IPs no forzadas!"
+      contains:
+        # Don't translate the true or false
+        successful:
+          'true': "&a%1$s se encuentra en la lista blanca de IPs no forzadas"
+          'false': "&a%1$s no se encuentra en la lista blanca de IPs no forzadas"
+        error: "&cLa IP especificada no es valida"
+      remove:
+        error:
+          notinside: "&cLa IP especificada no se encuentra en la lista blanca de IPs no forzadas"
+          invalid: "&cLa IP especificada no es valida"
+        successful: "&aLa IP %1$s ha sido borrada de la lista blanca de IPs no forzadas exitosamente"
+        # Translation left here on 22 of February of 2022 by BlackDemonZyT
+      force:
+        add:
+          successful:
+            movedblacklist: "&a%1$s &7has been successfully moved from the blacklist into the forced IPs whitelist"
+            movedwhitelist: "&a%1$s &7has been successfully moved from the not forced IPs whitelist into the forced IPs whitelist"
+            added: "&a%1$s &7has been successfully added to the forced IPs whitelist"
+          error:
+            invalid: "&cThe given IP or player is not valid"
+            already: "&cThe given IP or player's IP is already in the forced IPs whitelist"
+        remove:
+          error:
+            notinside: "&cThe given IP is not in the forced IPs whitelist"
+            invalid: "&cThe given IP is not valid"
+            invalidboolean: "&cThe given boolean is not valid"
+          successful:
+            removed: "&aSuccessfully removed %1$s from the forced IPs whitelist"
+            moved: "&aSuccessfully moved %1$s from the forced IPs whitelist to the not forced IPs whitelist"
+        clear:
+          successful: "&aSuccessfully cleared the whole forced IPs whitelist"
+          error: "&cThe code is incorrect: /bs whitelist force clear %1$d"
+          confirm: "&cConfirm clearing by running: /bs whitelist force clear %1$d"
+          warning: "&4Caution! &cThis will remove all IPs from the forced IPs whitelist!"
+        contains:
+          # Don't translate the true or false
+          successful:
+            'true': "&a%1$s is in the forced IPs whitelist"
+            'false': "&a%1$s is not in the forced IPs whitelist"
+          error: "&cThe given IP is not valid"
+      usernames:
+        add:
+          successful: "&a%1$s &7has been successfully added to the usernames whitelist"
+          already: "&cThe given username was already in the usernames whitelist"
+          invalidname: "&cThe given username cannot be formatted like an IP"
+        remove:
+          successful: "&aSuccessfully removed %1$s from the usernames whitelist"
+          notinside: "&cThe given username is not in the usernames whitelist"
+        clear:
+          successful: "&aSuccessfully cleared the whole usernames whitelist"
+          warning: "&4Caution! &cThis will remove all usernames from the usernames whitelist!"
+          confirm: "&cConfirm clearing by running: /bs whitelist usernames clear %1$d"
+          error: "&cThe code is incorrect: /bs whitelist usernames clear %1$d"
+        contains:
+          # Don't translate the true or false
+          successful:
+            'true': "&a%1$s is in the usernames whitelist"
+            'false': "&a%1$s is not in the usernames whitelist"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fYou can add, remove, clear and check if an IP is inside the whitelist\n&fOr add, remove, clear and check if an username is inside the usernames whitelist.\n&r\n&8\u00BB &6Parameters:\n&8- &badd&7: &fAdd an IP to the whitelist (by an IP or username)\n&8- &bremove&7: &fRemove an IP from the whitelist\n&8- &bclear&7: &fRemoves all IPs from the whitelist\n&8- &bcontains&7: &fChecks if the IP is in the whitelist\n&8- &b[extra] &7- &fExtra information used in other commands\n&8  - &bip &7- If the last parameter is add, remove or contains\n&8  - &b<add:remove:clear:contains> [name] &7- If the last parameter is usernames/force\n&r"
+      format: "whitelist <add:remove:clear:contains:usernames:force> [extra]"
+    # Don't translate the off
+    'off':
+      successful: "&aSuccessfully disabled AntiBot Mode"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fDeactivates the AntiBot Mode\n&r"
+      description: "Deactivates AntiBot Mode manually"
+      format: "off"
+      error: "&cAntiBot Mode is already off"
+    stats:
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fReturns a detailed list and count of blacklisted IPs, whitelisted IPs, check queue and more.\n&r"
+      fullmessage: "&r\n&r\n&8&m&l-------------&8&l<&r  &c&lBotSentry  &8&l>&8&m&l-------------\n&r\n&8\u00BB &6Version: &f%1$s\n&8\u00BB &6Whitelisted IPs: &f%2$d &7IPs &6(&f%3$d &7Forced IPs&6)\n&8\u00BB &6Whitelisted Usernames: &f%4$d &7usernames\n&8\u00BB &6Blacklisted IPs: &f%5$d &7IPs\n&8\u00BB &6IPs in the queue: &f%6$d &7IPs\n&8\u00BB &6IPs checked this session: &f%7$d &7IPs\n&8\u00BB &6IPs detected as Proxy this session: &f%8$d &7IPs\n&8\u00BB &6Bad packets prevented this session: &f%9$d &7packets\n"
+      message:
+        server: "&8\u00BB &6Server IP and Port: &f%1$s"
+      description: "Gives the current plugin statistics"
+      format: "stats"
+    apipassword:
+      error:
+        already: "&cThis server already has an API password set this session"
+        unknown: "&cAn unknown error occurred when uploading the password"
+        invalid: "&cThe given password is invalid. (Maximum length is 14, needs to be alphanumeric)"
+      successful: "&aSuccessfully set the API password for this server (IP: &c%1$s&a)"
+      description: "Sets the API password"
+      format: "apipassword <password>"
+      uploading: "&bUploading API password..."
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fThis command sets a password for you to be able to use our public API, the password has a maximum length of 14 and has to be alphanumeric.\n&r\n&fWith this API you have access to make web-requests to:\n&7www.cyberdevelopment.es/BotSentry/publicapi/request.php\n&r\n&8&l(&4&l!&8&l) &cThis command can only be ran once per session!\n&r"
+    blacklist:
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fYou can add, remove, clear and check if an IP is inside the blacklist\n&r\n&8\u00BB &6Parameters:\n&8- &badd&7: &fAdd an IP to the blacklist (by an IP or username)\n&8- &bremove&7: &fRemove an IP from the blacklist\n&8- &bclear&7: &fRemoves all IPs from the blacklist\n&8- &bcontains&7: &fChecks if the IP is in the blacklist\n&8- &b[ip] &7- &fThe IP that can be used in some operations\n&r"
+      description: "Blacklisting"
+      clear:
+        confirm: "&cConfirm clearing by running: /bs blacklist clear %1$d"
+        error: "&cThe code is incorrect: /bs blacklist clear %1$d"
+        successful: "&aSuccessfully cleared the whole blacklist"
+        warning: "&4Caution! &cThis will remove all IPs from the blacklist!"
+      format: "blacklist <add:remove:clear:contains> [ip]"
+      remove:
+        successful: "&aSuccessfully removed %1$s from the blacklist"
+        error:
+          notinside: "&cThe given IP is not blacklisted"
+          invalid: "&cThe given IP is not valid"
+      add:
+        error:
+          already: "&cThe given IP or player's IP is already in the blacklist"
+          invalid: "&cThe given IP or player is not valid"
+          forcedwhitelist: "&cCannot blacklist, the given IP is in the forced whitelist"
+        successful:
+          moved: "&a%1$s &7has been successfully moved from the whitelist into the blacklist"
+          added: "&a%1$s &7has been successfully blacklisted"
+      contains:
+        successful:
+          # Don't translate the true and false
+          'false': "&a%1$s is not blacklisted"
+          'true': "&a%1$s is blacklisted"
+        error: "&cThe given IP is not valid"
+    reload:
+      wait: "&cReloading data and internal systems, please wait for a few seconds..."
+      successful: "&aSuccessfully reloaded data and internal systems"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fSimple command to reload the plugin.\n&r\n&8\u00BB &6What the plugin will do when reloading:\n&8- &fSaves and loads the blacklist and whitelist.\n&8- &fLoads all messages and configurations from the files.\n&8- &fDoes not restart running processes.\n&8- &fRestarts the Auto Purger times (as they can be changed).\n&8- &fRe-runs the blacklist firewall commands (if enabled).\n&8- &fConnects to the MySQL database, if enabled.\n&r\n&8&l(&4&l!&8&l) &cCannot be used when AntiBot mode is ON.\n&r"
+      format: "reload"
+      error: "&cAntiBot Mode is on, did not reload files"
+      description: "Reloads all values from the configuration"
+    discord:
+      description: "Gives the plugin's official Discord's link"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fReturns the Discord link of the official support Discord.\n&fDiscord: &a&nhttps://discord.gg/8f55U9k\n&r"
+      format: "discord"
+    # Don't translate the on
+    'on':
+      successful: "&aSuccessfully enabled AntiBot Mode"
+      format: "on"
+      error: "&cAntiBot Mode is already on"
+      description: "Activates AntiBot Mode manually"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fActivates the AntiBot mode. Not recommended to activate it manually, AntiBot enables itself when needed.\n&r"
+    notifications:
+      description: "Toggles ActionBar notifications for you"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fDisables/enables the notifications for the player and gives the player notifications about the attack that is going on in the ActionBar.\n&r\n&8&l(&4&l!&8&l) &cThe server must be using 1.8 or older!\n&r"
+      successfully:
+        enabled: "&aSuccessfully enabled the notifications"
+        disabled: "&aSuccessfully disabled the notifications"
+      error:
+        version: "&cYou or the server needs to have at least Minecraft 1.8"
+        console: "&cCannot run this command from the console"
+      format: "notifications"
+    scan:
+      description: "Gives the data about the given IP"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fGives the data about the given player's IP or given IP.\n&fThe data are retrieved from cache or BotSentry's backend.\n&fAlso gives extra control options when the executor has the botsentry.admin permission.\n&fWhen requesting to the backend, there is a cooldown between scans..\n&r\n&8\u00BB &6Parameters:\n&b<ip:player> &7- &fThe IP or player to retrieve the data of.\n&r"
+      format: "scan <ip:player>"
+      message: "&r\n&r\n&8&m&l-------------&8&l<&r  &c&lBotSentry  &8&l>&8&m&l-------------\n&r\n&8\u00BB &6IP: &f%1$s\n&8\u00BB &6Whitelisted: &f%2$s &7%3$s\n&8\u00BB &6Blacklisted: &f%4$s\n&8\u00BB &6Proxy: &f%5$s\n&8\u00BB &6ISO Code: &f%6$s\n&8\u00BB &6Continent: &f%7$s\n&8\u00BB &6Provider: &f%8$s\n&8\u00BB &6Online Players with IP: &f%9$d &7player(s)"
+      actions:
+        front: "&6Click to "
+        whitelist: "&a&l[WHITELIST]"
+        blacklist: "&c&l[BLACKLIST]"
+        kick: "&b&l[KICK]"
+        end: " &6this IP"
+      invalid: "&cThe given IP or player is not valid"
+      wait: "&cRetrieving data from backend, please wait for a few seconds..."
+      status:
+        'true': "&aTrue"
+        'false': "&cFalse"
+        temporarily: "(Not Forced IPs, Temporarily)"
+        permanent: "(Not Forced IPs, Permanent)"
+        forcedip: "(Forced IPs)"
+        notavailable: "N/A"
+        playeritem: "    &6- &f%1$s"
+        playeritemwhitelisted: "    &6- &f%1$s &7(Usernames Whitelist)"
+      busy: "&cPlease wait a few seconds, there is a cooldown between scans"
+    kick:
+      description: "Kicks all/some players with the given criterion"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fKicks all or some online players using the given criterion.\n\n&r\n&8\u00BB &6Parameters:\n&b<ip:multipleAccounts> &7- &fThe criterion to check for.\n&8- &bip&7: &fKicks an IP by an IP or username (the player's IP will be used)\n&8- &bmultipleAccounts&7: &fKicks an IP with at least the given amount of online players of that IP\n&b<argument> &7- &fAdditional argument used per criterion (e.g. IP, username, amount).\n&b[leaveConnected] &7- &fThe amount of online players to keep connected per IP, of if negative the amount of players to kick.\n&r"
+      format: "kick <ip:multipleAccounts> <argument> [leaveConnected]"
+      invalidnumber: "&cThe argument &f%1$s &cis not a valid number"
+      ip:
+        invalid: "&cThe given IP or player is not valid"
+        successful: "&7Successfully kicked all/some online players using IP &a%1$s"
+      multipleaccounts:
+        invalid: "&cThe given argument has to be a positive number"
+        successful: "&7Successfully kicked some/all players of &a%1$d &7IPs with atleast &a%2$d &7concurrent players."
+    accounts:
+      description: "Shows all IPs with amount of players"
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fDisplays all IPs and the number of online players of that IP.\n&fThe command is sorted by the amount of online players (decreasing)\n\n&r\n&8\u00BB &6Parameters:\n&b[page] &7- &fThe page number of the found results.\n&b[itemsPerPage] &7- &fThe amount of IPs per page.\n&r"
+      format: "accounts [page] [itemsPerPage]"
+      header: "&r\n&r\n&8&m&l-------------&8&l<&r  &c&lBotSentry  &8&l>&8&m&l-------------\n&r\n"
+      noaccount: "&7There are currently no players online."
+      item: "&7\u00BB &f%1$s &6has &f%2$d player(s) &6online &b&l[CLICK TO SCAN]"
+      itemhover: "&6Click to scan: &f%1$s"
+      navigation:
+        previous: "&d&nPrevious page &c&m\u00AB &r"
+        next: "&r &c&m\u00BB &d&nNext page"
+        current: "&cPage (%1$d/%2$d)"
+        hover: "&cClick to navigate to page &6%1$d &cof &6%2$s"
+      invalidnumber: "&cThe given argument has to be a positive number"
+    help:
+      fulldescription: "&r\n&8\u00BB &6Full Description:\n&fGives a full explanatory list with all available commands.\n&fOr with a given command, shows that command's full description.\n&r\n&8\u00BB &6Parameters:\n&b[command] &7- &fThe command to give more information of.\n&r"
+      format: "help [command]" # Don't translate this
+      description: "Shows a menu with the list of commands"
+    mainhelp: "&7\u00BB All main commands with their descriptions:\n&r"
+    helpformat: "&8\u00BB &7/bs &6%1$s &8- &f%2$s"
+    # The header of a lot of BotSentry commands
+    header: "&r\n&r\n&8&m&l-------------&8&l<&r  &c&lBotSentry  &8&l>&8&m&l-------------&r\n&r"
+  bsw:
+    # The header of the BotSentry Wiki
+    header: "&8&m&l-------------&8&l<&r  &c&lBotSentry &6&lWiki  &8&l>&8&m&l-------------"
+    search:
+      empty: "&cPlease add a search query: &7/bsw %1$s search <query>"
+
+consolefiltering:
+  update: "&f%1$d &bIPs blacklisted (last second) &7&l\u00BB &f%2$d &bIPs joined (last second) &7&l\u00BB &f%3$d &bIPs pinged (last second)"
+  badpackets: "&f%1$d &bBad packets prevented (last second)"
+antibotmode:
+  lockdown: "&8\u00AB &cBotSentry &8\u00BB\n&7We are suffering a Bot Attack!\n&7-----------------------------------\n\n&cThe AntiBot Mode is currently ON.\n&cThe lockdown will take atleast &f%1$d &cmore seconds.\n\n&7-----------------------------------\n&7You want to play without waiting? Complete the Google Captcha at:\n&e%2$s"
+notifications:
+  attack: "&7\u00BB &cIPs in blacklist: &f%1$d &7- &cBots last second: &f%2$d &7- &cIPs in queue: &f%3$d &7- &cBad packets prevented this session: &f%4$d &7\u00AB"
+  waiting: "&7\u00BB &6Waiting for new attacks to arrive... &7\u00AB"
+# Specify here if you use a custom URL
+notenougharguments: "&cNot enough arguments: /%1$s, use /%2$s for more information"
+detection:
+  kick: "&8\u00AB &cBotSentry &8\u00BB\n&7We are analyzing your connection!\n&7-----------------------------------\n\n&cWe detected some dangerous activity on the server, we are now confirming all requests.\n&cRe-join the server please.\n\n&7-----------------------------------\n&7If the problem persists, you can complete the Google Captcha to assure the joining:\n&e%1$s"
+  dolly: "&8\u00AB &cBotSentry &8\u00BB\n&7You surpassed the limit of accounts!\n&7-----------------------------------\n\n&cYou have been blacklisted/kicked for playing with a lot of different nicknames with the same IP at the same time!\n\n&7-----------------------------------\n&7Do you think this was a mistake? Complete the Google Captcha at:\n&e%1$s"
+  amazon: "&8\u00AB &cBotSentry &8\u00BB\n&7Your connection is very suspicious!\n&7-----------------------------------\n\n&cYour connection is very suspicious for the server.\n&cTry re-joining or restarting Minecraft to fix it!\n\n&7-----------------------------------\n&7Do you think this was a mistake?\n&eContact an admin of the server."
+  illegalname: "&8\u00AB &cBotSentry &8\u00BB\n&7Your connection has been analyzed!\n&7-----------------------------------\n\n&cYour username contains illegal characters.\nAllowed characters are: [a-zA-Z0-9_]*\n\n&7-----------------------------------\n&7Do you think this was a mistake?\n&eContact an admin of the server."
+  firstjoin: "&8\u00AB &cBotSentry &8\u00BB\n&cWe are analyzing your connection!\n&7-----------------------------------\n\n&cAs this is your first time playing, we are checking your connection.\n\n&7-----------------------------------\n&eYou can join back immediately!"
+  antiproxy: "&8\u00AB &cBotSentry &8\u00BB\n&cWe have detected an invalid IP!\n&7-----------------------------------\n\n&cThis server has disabled IPs with certain settings, please refrain from using this IP.\n\n&7-----------------------------------\n&7Do you think this was a mistake?\n&eContact an admin of the server."
+# Needs to be changed in every message due to more customization purposes
+prefix: "&6BotSentry &7\u00BB"
+nosubcommand: "&c%1$s is an unknown sub command"
+nopermission: "&cYou do not have enough permissions to do this"
