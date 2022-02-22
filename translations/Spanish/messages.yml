@@ -19,14 +19,14 @@
 #                 )_(   |/     \||/     \||/    )_)|/     \|   )_(   (_______)\_______)                 #
 #                                                                                                       #
 #                                                                                                       #
-#                  Join our Discord Server if you need Support or have any doubt!                       #
+#                    Entra a nuestro servidor de Discord si tienes alguna duda!                         #
 #                                  https://discord.gg/uxRTwDa                                           #
 #                                                                                                       #
-#                      You can get some translations made by our community in:                          #
+#                  Puedes obtener algunas traducciones hechas por la comunidad en:                      #
 #                        https://cyberdevelopment.es/BotSentry/translations                             #
 #                                                                                                       #
-#  Add our official Discord Bot to your DC server, the bot will send a message in your Discord Server   #
-#      and in your DMs when an attack occurs to your server, with statistics related to the attack      #
+#  Puedes añadir nuestro bot oficial de Discord en tu servidor, el bot enviara un mensaje en tu discord #
+#       y en tus mensajes privados cuando ocurre un ataque en tu servidor, con estadisticas y mas       #
 #       https://discord.com/oauth2/authorize?client_id=750526188555993148&scope=bot&permissions=8       #
 #                                                                                                       #
 #-------------------------------------------------------------------------------------------------------#
@@ -71,7 +71,7 @@ commands:
         confirm: "&cConfirma la limpieza con: /bs whitelist clear %1$d"
         warning: "&4Cuidado! &cEsto borrara todas las IPs de la lista blanca de IPs no forzadas!"
       contains:
-        # Don't translate the true or false
+        # No traducir el true y el false
         successful:
           'true': "&a%1$s se encuentra en la lista blanca de IPs no forzadas"
           'false': "&a%1$s no se encuentra en la lista blanca de IPs no forzadas"
@@ -105,7 +105,7 @@ commands:
           confirm: "&cConfirm clearing by running: /bs whitelist force clear %1$d"
           warning: "&4Caution! &cThis will remove all IPs from the forced IPs whitelist!"
         contains:
-          # Don't translate the true or false
+          # No traducir el true y el false
           successful:
             'true': "&a%1$s is in the forced IPs whitelist"
             'false': "&a%1$s is not in the forced IPs whitelist"
@@ -124,13 +124,13 @@ commands:
           confirm: "&cConfirm clearing by running: /bs whitelist usernames clear %1$d"
           error: "&cThe code is incorrect: /bs whitelist usernames clear %1$d"
         contains:
-          # Don't translate the true or false
+          # No traducir el true y el false
           successful:
             'true': "&a%1$s is in the usernames whitelist"
             'false': "&a%1$s is not in the usernames whitelist"
       fulldescription: "&r\n&8\u00BB &6Full Description:\n&fYou can add, remove, clear and check if an IP is inside the whitelist\n&fOr add, remove, clear and check if an username is inside the usernames whitelist.\n&r\n&8\u00BB &6Parameters:\n&8- &badd&7: &fAdd an IP to the whitelist (by an IP or username)\n&8- &bremove&7: &fRemove an IP from the whitelist\n&8- &bclear&7: &fRemoves all IPs from the whitelist\n&8- &bcontains&7: &fChecks if the IP is in the whitelist\n&8- &b[extra] &7- &fExtra information used in other commands\n&8  - &bip &7- If the last parameter is add, remove or contains\n&8  - &b<add:remove:clear:contains> [name] &7- If the last parameter is usernames/force\n&r"
       format: "whitelist <add:remove:clear:contains:usernames:force> [extra]"
-    # Don't translate the off
+    # No traducir el off
     'off':
       successful: "&aSuccessfully disabled AntiBot Mode"
       fulldescription: "&r\n&8\u00BB &6Full Description:\n&fDeactivates the AntiBot Mode\n&r"
@@ -178,7 +178,7 @@ commands:
           added: "&a%1$s &7has been successfully blacklisted"
       contains:
         successful:
-          # Don't translate the true and false
+          # No traducir el true y el false
           'false': "&a%1$s is not blacklisted"
           'true': "&a%1$s is blacklisted"
         error: "&cThe given IP is not valid"
@@ -193,7 +193,7 @@ commands:
       description: "Gives the plugin's official Discord's link"
       fulldescription: "&r\n&8\u00BB &6Full Description:\n&fReturns the Discord link of the official support Discord.\n&fDiscord: &a&nhttps://discord.gg/8f55U9k\n&r"
       format: "discord"
-    # Don't translate the on
+    # No traducir el on
     'on':
       successful: "&aSuccessfully enabled AntiBot Mode"
       format: "on"
@@ -260,14 +260,14 @@ commands:
       invalidnumber: "&cThe given argument has to be a positive number"
     help:
       fulldescription: "&r\n&8\u00BB &6Full Description:\n&fGives a full explanatory list with all available commands.\n&fOr with a given command, shows that command's full description.\n&r\n&8\u00BB &6Parameters:\n&b[command] &7- &fThe command to give more information of.\n&r"
-      format: "help [command]" # Don't translate this
+      format: "help [command]" # No traducir esto
       description: "Shows a menu with the list of commands"
     mainhelp: "&7\u00BB All main commands with their descriptions:\n&r"
     helpformat: "&8\u00BB &7/bs &6%1$s &8- &f%2$s"
-    # The header of a lot of BotSentry commands
+    # La cabecera de muchos comandos de BotSentry
     header: "&r\n&r\n&8&m&l-------------&8&l<&r  &c&lBotSentry  &8&l>&8&m&l-------------&r\n&r"
   bsw:
-    # The header of the BotSentry Wiki
+    # La cabecera de la wiki de BotSentry
     header: "&8&m&l-------------&8&l<&r  &c&lBotSentry &6&lWiki  &8&l>&8&m&l-------------"
     search:
       empty: "&cPlease add a search query: &7/bsw %1$s search <query>"
@@ -289,7 +289,7 @@ detection:
   illegalname: "&8\u00AB &cBotSentry &8\u00BB\n&7Your connection has been analyzed!\n&7-----------------------------------\n\n&cYour username contains illegal characters.\nAllowed characters are: [a-zA-Z0-9_]*\n\n&7-----------------------------------\n&7Do you think this was a mistake?\n&eContact an admin of the server."
   firstjoin: "&8\u00AB &cBotSentry &8\u00BB\n&cWe are analyzing your connection!\n&7-----------------------------------\n\n&cAs this is your first time playing, we are checking your connection.\n\n&7-----------------------------------\n&eYou can join back immediately!"
   antiproxy: "&8\u00AB &cBotSentry &8\u00BB\n&cWe have detected an invalid IP!\n&7-----------------------------------\n\n&cThis server has disabled IPs with certain settings, please refrain from using this IP.\n\n&7-----------------------------------\n&7Do you think this was a mistake?\n&eContact an admin of the server."
-# Needs to be changed in every message due to more customization purposes
+# Necesita ser cambiado en cada mensaje para mas personalizacion
 prefix: "&6BotSentry &7\u00BB"
 nosubcommand: "&c%1$s is an unknown sub command"
 nopermission: "&cYou do not have enough permissions to do this"
