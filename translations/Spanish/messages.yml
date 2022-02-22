@@ -37,7 +37,7 @@
 #   | |  | | |____ ____) |___) / ____ \ |__| | |____ ____) |
 #   |_|  |_|______|_____/_____/_/    \_\_____|______|_____/
 #
-# The url that will get automatically substituted in kick messages
+# La URL que se substituira en los mensajes de Kick automaticamente
 whitelisturl: "www.notbot.es"
 error:
   startup: "&cError al conectar con los servidores de &6&lBotSentry&c, codigo &4%1$d&c. &cPuedes ignorar este error en caso de que aparezca 2-3 veces, si es repetitivo, contactanos en discord (/bs discord)."
@@ -280,7 +280,6 @@ antibotmode:
 notifications:
   attack: "&7\u00BB &cIPs in blacklist: &f%1$d &7- &cBots last second: &f%2$d &7- &cIPs in queue: &f%3$d &7- &cBad packets prevented this session: &f%4$d &7\u00AB"
   waiting: "&7\u00BB &6Waiting for new attacks to arrive... &7\u00AB"
-# Specify here if you use a custom URL
 notenougharguments: "&cNot enough arguments: /%1$s, use /%2$s for more information"
 detection:
   kick: "&8\u00AB &cBotSentry &8\u00BB\n&7We are analyzing your connection!\n&7-----------------------------------\n\n&cWe detected some dangerous activity on the server, we are now confirming all requests.\n&cRe-join the server please.\n\n&7-----------------------------------\n&7If the problem persists, you can complete the Google Captcha to assure the joining:\n&e%1$s"
