@@ -1,6 +1,11 @@
 node_modules
 dist
 
+backend
+.backend
+*.backend
+*backend
+
 # local env files
 .env
 .env.local
